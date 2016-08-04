@@ -1,7 +1,7 @@
-package com.luliu.rest.controller;
+package com.luliu.rest.controller.mybatis;
 
 import com.luliu.rest.model.User;
-import com.luliu.rest.service.UserService;
+import com.luliu.rest.service.IUserService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,14 +11,14 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * @author luliu3 on 2016/7/30.
+ * @author luliu3 on 2016/8/4.
  */
-@RestController
-@RequestMapping("/user")
+@RestController(value = "MybatisController")
+@RequestMapping("/mybatis")
 public class UserController {
 
-    @Resource
-    private UserService userService;
+    @Resource(name = "MybatisUserService")
+    private IUserService userService;
 
     // Http GET: xxx.com/user
     @GetMapping
@@ -42,7 +42,7 @@ public class UserController {
         if (null == u) {
             return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
         }
-        headers.set("Record Found", u.getFirstName() + " " + u.getLastName());
+        headers.set("Record Found", u.getFirstname() + " " + u.getLastname());
         return new ResponseEntity<User>(u, headers, HttpStatus.OK);
     }
 
@@ -58,7 +58,7 @@ public class UserController {
             return new ResponseEntity<User>(headers, HttpStatus.CONFLICT);
         }
         userService.add(user);
-        headers.set("Record Created", user.getFirstName() + " " + user.getLastName());
+        headers.set("Record Created", user.getFirstname() + " " + user.getLastname());
         return new ResponseEntity<User>(user, headers, HttpStatus.CREATED);
     }
 
@@ -71,7 +71,7 @@ public class UserController {
         }
         int cnt = userService.deleteById(id);
         HttpHeaders headers = new HttpHeaders();
-        headers.set("Record Deleted", user.getFirstName() + " " + user.getLastName());
+        headers.set("Record Deleted", user.getFirstname() + " " + user.getLastname());
         return new ResponseEntity<User>(user, headers, HttpStatus.OK);
     }
 
@@ -87,8 +87,7 @@ public class UserController {
         }
         userService.update(user);
         HttpHeaders headers = new HttpHeaders();
-        headers.set("Record Updated", user.getFirstName() + " " + user.getLastName());
+        headers.set("Record Updated", user.getFirstname() + " " + user.getLastname());
         return new ResponseEntity<User>(user, headers, HttpStatus.OK);
     }
-
 }

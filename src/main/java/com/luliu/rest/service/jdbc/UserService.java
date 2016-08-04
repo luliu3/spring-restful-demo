@@ -1,8 +1,8 @@
-package com.luliu.rest.service.impl;
+package com.luliu.rest.service.jdbc;
 
-import com.luliu.rest.dao.UserDao;
+import com.luliu.rest.dao.IUserDao;
 import com.luliu.rest.model.User;
-import com.luliu.rest.service.UserService;
+import com.luliu.rest.service.IUserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -11,11 +11,11 @@ import java.util.List;
 /**
  * @author luliu3 on 2016/7/30.
  */
-@Service("UserService")
-public class UserServiceImpl implements UserService {
+@Service("JdbcUserService")
+public class UserService implements IUserService {
 
-    @Resource
-    private UserDao userDao;
+    @Resource(name = "JdbcUserDao")
+    private IUserDao userDao;
 
 
     public List getAll() {

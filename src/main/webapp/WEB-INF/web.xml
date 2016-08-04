@@ -42,7 +42,6 @@
         <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
     </listener>
 
-
     <!-- 支持Restful风格的请求Url -->
     <filter>
         <filter-name>HiddenHttpMethodFilter</filter-name>

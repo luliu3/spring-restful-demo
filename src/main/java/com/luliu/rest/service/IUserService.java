@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * @author luliu3 on 2016/7/30.
  */
-public interface UserService {
+public interface IUserService {
 
     public List getAll();
 

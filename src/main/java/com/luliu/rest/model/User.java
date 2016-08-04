@@ -5,20 +5,25 @@ package com.luliu.rest.model;
  */
 public class User {
     private Long id;
-	private String firstName;
-	private String lastName;
+	private String firstname;
+	private String lastname;
 	private String email;
 	private String mobile;
 
-    public User() {
+    public String getEmail() {
+        return email;
     }
 
-    public User(long id, String firstName, String lastName, String email, String mobile) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public void setEmail(String email) {
         this.email = email;
-        this.mobile = mobile;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
     public Long getId() {
@@ -29,28 +34,12 @@ public class User {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getMobile() {
@@ -59,5 +48,16 @@ public class User {
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "email='" + email + '\'' +
+                ", id=" + id +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", mobile='" + mobile + '\'' +
+                '}';
     }
 }

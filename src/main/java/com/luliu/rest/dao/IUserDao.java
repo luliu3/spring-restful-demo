@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * @author luliu3 on 2016/7/30.
  */
-public interface UserDao {
+public interface IUserDao {
     public List<User> getAll();
     public User get(Long id);
     public int create(User user);

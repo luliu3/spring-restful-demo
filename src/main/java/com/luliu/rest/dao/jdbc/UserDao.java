@@ -1,6 +1,6 @@
-package com.luliu.rest.dao.impl;
+package com.luliu.rest.dao.jdbc;
 
-import com.luliu.rest.dao.UserDao;
+import com.luliu.rest.dao.IUserDao;
 import com.luliu.rest.model.User;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -24,8 +24,8 @@ This annotation also allows the component scanning support
 to find and configure your DAOs and repositories without having to provide
 XML configuration entries for them.
 */
-@Repository("UserDao")
-public class UserDaoImpl implements UserDao {
+@Repository("JdbcUserDao")
+public class UserDao implements IUserDao {
 
     private JdbcTemplate jdbcTemplate;
 
@@ -61,7 +61,7 @@ public class UserDaoImpl implements UserDao {
     public int create(User user) {
 
         String sql = "INSERT INTO user " +"(id, firstname, lastname, email, mobile) VALUES (?, ?, ?, ?, ?)";
-        Object[] paras = new Object[] { user.getId(), user.getFirstName(), user.getLastName(), user.getEmail(), user.getMobile() };
+        Object[] paras = new Object[] { user.getId(), user.getFirstname(), user.getLastname(), user.getEmail(), user.getMobile() };
         return jdbcTemplate.update(sql, paras);
     }
 
@@ -75,7 +75,7 @@ public class UserDaoImpl implements UserDao {
     public int update(User user) {
 
         String sql = "UPDATE user SET firstname = ?,lastname = ?, email = ?, mobile = ? WHERE id = ?";
-        Object[] paras = new Object[] {user.getFirstName(), user.getLastName(), user.getEmail(), user.getMobile(), user.getId()};
+        Object[] paras = new Object[] {user.getFirstname(), user.getLastname(), user.getEmail(), user.getMobile(), user.getId()};
         return jdbcTemplate.update(sql, paras);
     }
 }
