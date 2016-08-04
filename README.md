@@ -17,14 +17,16 @@ spring4+mybatis+mysql
 
 # Usage
 
+# 1. JDBC
+
 ## Paste the following link into your browser
 
-- GET:  `http://localhost:8080/rest/user`
-- GET:  `http://localhost:8080/rest/user/100`
+- GET:  `http://localhost:8080/rest/jdbc/user`
+- GET:  `http://localhost:8080/rest/jdbc/user/100`
 
 ##¡¡Use Postman to do following test
 
-- POST: `http://localhost:8080/rest/user/new`
+- POST: `http://localhost:8080/rest/jdbc/user/new`
 with body
 ```
 {
@@ -38,7 +40,7 @@ with body
 
 }
 ```
-- PUT: `http://localhost:8080/rest/user/update/1`
+- PUT: `http://localhost:8080/rest/jdbc/user/update/1`
 with body
 ```
 {
@@ -52,4 +54,43 @@ with body
 
 }
 ```
-- DEL: `http://localhost:8080/rest/user/delete/1`
+- DEL: `http://localhost:8080/rest/jdbc/user/delete/1`
+
+# 2. mybatis
+
+## Paste the following link into your browser
+
+- GET:  `http://localhost:8080/rest/mybatis/user`
+- GET:  `http://localhost:8080/rest/mybatis/user/100`
+
+##¡¡Use Postman to do following test
+
+- POST: `http://localhost:8080/rest/mybatis/user/new`
+with body
+```
+{
+
+    "id": 1,
+    "firstName": "lu",
+
+    "lastName": "liu",
+    "email": "luliu3@iflytek.com",
+    "mobile": "131-0000-0000"
+
+}
+```
+- PUT: `http://localhost:8080/rest/mybatis/user/update/1`
+with body
+```
+{
+
+    "id": 1,
+    "firstName": "lu1",
+
+    "lastName": "liu1",
+    "email": "luliu1@iflytek.com",
+    "mobile": "131-1111-1111"
+
+}
+```
+- DEL: `http://localhost:8080/rest/mybatis/user/delete/1`

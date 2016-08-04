@@ -15,13 +15,12 @@ import java.util.List;
  * @author luliu3 on 2016/7/30.
  */
 @RestController(value = "JdbcController")
-@RequestMapping("/user")
+@RequestMapping("/jdbc/user")
 public class UserController {
 
     @Resource(name = "JdbcUserService")
     private IUserService userService;
 
-    // Http GET: xxx.com/user
     @GetMapping
     public ResponseEntity getAllUsers() {
 
@@ -34,7 +33,6 @@ public class UserController {
         return new ResponseEntity<List>(list, headers, HttpStatus.OK);
     }
 
-    // Http GET: xxx.com/user/{id}
     @GetMapping("/{id}")
     public ResponseEntity getUser(@PathVariable Long id) {
 
@@ -47,7 +45,6 @@ public class UserController {
         return new ResponseEntity<User>(u, headers, HttpStatus.OK);
     }
 
-    // Http POST: xxx.com/user/new
     @PostMapping("/new")
     public ResponseEntity addUser(@RequestBody User user) {
 
@@ -63,7 +60,6 @@ public class UserController {
         return new ResponseEntity<User>(user, headers, HttpStatus.CREATED);
     }
 
-    // Http DELETE: xxx.com/user/delete/{id}
     @DeleteMapping("/delete/{id}")
     public ResponseEntity deleteUser(@PathVariable Long id) {
         User user = userService.getById(id);
@@ -76,7 +72,6 @@ public class UserController {
         return new ResponseEntity<User>(user, headers, HttpStatus.OK);
     }
 
-    // Http PUT: xxx.com/user/update/{id}
     @PutMapping("/update/{id}")
     public ResponseEntity updateUser(@PathVariable Long id, @RequestBody User user) {
 
