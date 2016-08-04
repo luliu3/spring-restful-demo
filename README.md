@@ -22,75 +22,71 @@ spring4+mybatis+mysql
 ## Paste the following link into your browser
 
 - GET:  `http://localhost:8080/rest/jdbc/user`
-- GET:  `http://localhost:8080/rest/jdbc/user/100`
+- GET:  `http://localhost:8080/rest/jdbc/user/1`
 
-##¡¡Use Postman to do following test
+## Use Postman to do following test
 
 - POST: `http://localhost:8080/rest/jdbc/user/new`
 with body
 ```
 {
 
-    "id": 1,
+    "id": 100,
     "firstName": "lu",
-
     "lastName": "liu",
     "email": "luliu3@iflytek.com",
     "mobile": "131-0000-0000"
 
 }
 ```
-- PUT: `http://localhost:8080/rest/jdbc/user/update/1`
+- PUT: `http://localhost:8080/rest/jdbc/user/update/100`
 with body
 ```
 {
 
-    "id": 1,
+    "id": 100,
     "firstName": "lu1",
-
     "lastName": "liu1",
     "email": "luliu1@iflytek.com",
     "mobile": "131-1111-1111"
 
 }
 ```
-- DEL: `http://localhost:8080/rest/jdbc/user/delete/1`
+- DEL: `http://localhost:8080/rest/jdbc/user/delete/100`
 
 # 2. mybatis
 
 ## Paste the following link into your browser
 
 - GET:  `http://localhost:8080/rest/mybatis/user`
-- GET:  `http://localhost:8080/rest/mybatis/user/100`
+- GET:  `http://localhost:8080/rest/mybatis/user/1`
 
-##¡¡Use Postman to do following test
+## Use Postman to do following test
 
 - POST: `http://localhost:8080/rest/mybatis/user/new`
 with body
 ```
 {
 
-    "id": 1,
+    "id": 100,
     "firstName": "lu",
-
     "lastName": "liu",
     "email": "luliu3@iflytek.com",
     "mobile": "131-0000-0000"
 
 }
 ```
-- PUT: `http://localhost:8080/rest/mybatis/user/update/1`
+- PUT: `http://localhost:8080/rest/mybatis/user/update/100`
 with body
 ```
 {
 
-    "id": 1,
+    "id": 100,
     "firstName": "lu1",
-
     "lastName": "liu1",
     "email": "luliu1@iflytek.com",
     "mobile": "131-1111-1111"
 
 }
 ```
-- DEL: `http://localhost:8080/rest/mybatis/user/delete/1`
+- DEL: `http://localhost:8080/rest/mybatis/user/delete/100`
