@@ -11,13 +11,13 @@ spring4+mybatis+mysql
 
 # Installation
 
-- Git clone https://github.com/luliu3/Spring4-REST-demo
+- Git clone https://github.com/luliu3/spring-restful-demo
 - Use Maven build and package it
 - Deploy RESTDemo.war to your Tomcat webapp directory `your_tomcat_dir/Tomcat 9.0/webapps`
 
 # Usage
 
-# 1. JDBC
+# 1. jdbc
 
 ## Paste the following link into your browser
 
@@ -32,8 +32,8 @@ with body
 {
 
     "id": 100,
-    "firstName": "lu",
-    "lastName": "liu",
+    "firstname": "lu",
+    "lastname": "liu",
     "email": "luliu3@iflytek.com",
     "mobile": "131-0000-0000"
 
@@ -45,9 +45,9 @@ with body
 {
 
     "id": 100,
-    "firstName": "lu1",
-    "lastName": "liu1",
-    "email": "luliu1@iflytek.com",
+    "firstname": "lu100",
+    "lastname": "liu100",
+    "email": "luliu100@iflytek.com",
     "mobile": "131-1111-1111"
 
 }
@@ -69,8 +69,8 @@ with body
 {
 
     "id": 100,
-    "firstName": "lu",
-    "lastName": "liu",
+    "firstname": "lu",
+    "lastname": "liu",
     "email": "luliu3@iflytek.com",
     "mobile": "131-0000-0000"
 
@@ -82,9 +82,9 @@ with body
 {
 
     "id": 100,
-    "firstName": "lu1",
-    "lastName": "liu1",
-    "email": "luliu1@iflytek.com",
+    "firstname": "lu100",
+    "lastname": "liu100",
+    "email": "luliu100@iflytek.com",
     "mobile": "131-1111-1111"
 
 }
